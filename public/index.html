@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>YouTube Queue</title>
+  <style>
+    body { font-family: Arial; margin: 40px; }
+    input { width: 400px; }
+    li { margin: 8px 0; }
+    button { margin-left: 10px; }
+  </style>
+</head>
+<body>
+
+<h1>YouTube Queue</h1>
+
+<input id="url" placeholder="YouTube URL" />
+<button onclick="add()">Add</button>
+<button onclick="skip()">Skip Current</button>
+
+<h2>Queue</h2>
+<ul id="list"></ul>
+
+<script src="app.js"></script>
+</body>
+</html>
