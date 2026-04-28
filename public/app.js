@@ -8,6 +8,7 @@ async function fetchQueue() {
   data.forEach(item => {
     const li = document.createElement("li");
     li.innerHTML = `
+      <img src="https://img.youtube.com/vi/${item.videoId}/mqdefault.jpg" width="320" />
       ${item.url}
       <button onclick="removeItem(${item.id})">Remove</button>
     `;

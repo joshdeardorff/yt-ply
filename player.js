@@ -7,7 +7,7 @@ function play(url) {
   return new Promise((resolve) => {
     console.log("Playing:", url);
 
-    currentProcess = spawn("mpv", [url, "--no-terminal"]);
+    currentProcess = spawn("mpv", [url, "--no-terminal", "--ytdl-format=\"bestvideo[height<=720]+bestaudio/best\"", "--vo=gpu", "--gpu-context=drm"]);
 
     const cleanup = () => {
       currentProcess = null;

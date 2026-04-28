@@ -35,9 +35,15 @@ app.post("/api/queue", (req, res) => {
   const { url } = req.body;
   if (!url) return res.status(400).json({ error: "Missing URL" });
 
+  //parse url to get video id
+  const urlObj = new URL(url);
+  const videoId = urlObj.searchParams.get("v");
+  if (!videoId) return res.status(400).json({ error: "Invalid YouTube URL" });
+
   const item = {
     id: Date.now(),
-    url
+    url,
+    videoId
   };
 
   queue.push(item);
